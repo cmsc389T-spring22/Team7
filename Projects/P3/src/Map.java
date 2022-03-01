@@ -55,7 +55,35 @@ public class Map{
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
-		return false;
+
+		//checking for bounds
+		if(loc.x < 0 || loc.x > dim || loc.y < 0 || loc.y > dim){
+			return false;
+		}
+		//check if wall is at given location
+		if(field.get(loc).contains(Map.Type.WALL)){
+			return false;
+		}
+		//check if null ? dont know if this is necessary
+		if(field.get(loc) == null){
+			return false;
+		}
+		//only pacman or ghost can move
+		if(type != Type.PACMAN && type != Type.GHOST){
+			return false;
+		}
+		//get old location of object
+		Location current = locations.get(name);
+		HashSet<Type> objInField = field.get(current);
+		objInField.remove(type);
+
+		//updating field
+		components.get(name).setLocation(loc.x,loc.y);
+		field.put(loc,new HashSet<Type>());
+		field.get(loc).add(type);
+		locations.put(name,loc);
+
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
