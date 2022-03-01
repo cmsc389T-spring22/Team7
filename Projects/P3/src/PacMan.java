@@ -18,8 +18,8 @@ public class PacMan{
 		//get different location coordinates around pacman's curr location
 		Location up = myLoc.shift(-1,0);
 		Location down = myLoc.shift(1,0);
-		location right = myLoc.shift(0,1);
-		location left = myLoc.shift(0,-1);
+		Location right = myLoc.shift(0,1);
+		Location left = myLoc.shift(0,-1);
 		//add locations to possible ArrayLIst we will iterate over
 		ArrayList<Location> possible = new ArrayList<Location>();
 		possible.add(up);
