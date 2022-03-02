@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.ArrayList;
 
-public class Ghost{
+public class Ghost {
 	String myName;
 	Location myLoc;
 	Map myMap;
@@ -17,10 +17,21 @@ public class Ghost{
 	}
 
 	public boolean move() {
+
+		ArrayList<Location> validMoves = get_valid_moves();
+
+		for (Location loc : validMoves) {
+			if (!myMap.getLoc(loc).contains(Map.Type.WALL)) {
+				myLoc = loc;
+				myMap.move("ghost", loc, Map.Type.GHOST);
+				return true;
+			}
+		}
+
 		return false;
 	}
 
-	public boolean is_pacman_in_range() { 
+	public boolean is_pacman_in_range() {
 		return false;
 	}
 
