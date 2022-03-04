@@ -111,7 +111,13 @@ public class PacMan {
 		}
 	}
 
-	public JComponent consume() {
-		return null;
+	public JComponent consume() { 
+		if(myMap != null && myLoc != null && myMap.getLoc(myLoc) != null){
+			if(myMap.getLoc(myLoc).contains(Map.Type.COOKIE )){
+				return myMap.eatCookie("pacman");
+			}
+			return null;
+		}
+ 		return null;
 	}
 }
