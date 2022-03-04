@@ -24,6 +24,10 @@ public class PacMan{
 
 	public boolean is_ghost_in_range() { 
 		
+		if (myLoc == null) {
+			return false;
+		}
+		
 		//PACMAN
 		int xx = myLoc.x;
 		int yy = myLoc.y;
@@ -40,13 +44,17 @@ public class PacMan{
 		// x-1
 		Location check4 = new Location(xx+1, yy);
 
-		if (myMap.getLoc(check1).contains(Map.Type.GHOST)) {
+		if (myMap.getLoc(check1).contains(Map.Type.GHOST) 
+				&& (myMap.getLoc(check1) != null)) {
 			return true;
-		} else if (myMap.getLoc(check2).contains(Map.Type.GHOST)) {
+		} else if (myMap.getLoc(check2).contains(Map.Type.GHOST)
+				&& (myMap.getLoc(check2) != null)) {
 			return true;
-		} else if (myMap.getLoc(check3).contains(Map.Type.GHOST)) {
+		} else if (myMap.getLoc(check3).contains(Map.Type.GHOST)
+				&& (myMap.getLoc(check3) != null)) {
 			return true;
-		} else if (myMap.getLoc(check4).contains(Map.Type.GHOST)) {
+		} else if (myMap.getLoc(check4).contains(Map.Type.GHOST)
+				&& (myMap.getLoc(check4) != null)) {
 			return true;
 		} else {
 			return false;
