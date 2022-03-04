@@ -4,7 +4,7 @@ import java.io.*;
 import org.junit.Assert.*;
 import org.junit.Test;
 
-public class TestAttack extends TestCase {
+public class TestMapAttack{
 
 	@Test
 	public void testAttack1() {
