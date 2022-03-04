@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Random;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 
@@ -53,17 +54,27 @@ public class PacMan {
 
 		// get all valid locations for pacman where it could be moved to next
 		ArrayList<Location> validMoves = get_valid_moves();
-
-		for (Location loc : validMoves) {
-			// move pacman to loc, if loc is occupied by a Cookie or is empty
-			if (myMap.getLoc(loc) != null && (myMap.getLoc(loc).contains(Map.Type.COOKIE)
-					|| myMap.getLoc(loc).contains(Map.Type.EMPTY))) {
-				myLoc = loc;
-				myMap.move("pacman", loc, Map.Type.PACMAN);
-				return true;
+		HashSet<Integer> set = new HashSet<Integer>();
+		Random random = new Random();
+		
+		for (int i = 0; i < validMoves.size(); i++) {
+			
+			int move = random.nextInt(validMoves.size());
+			
+			if (!set.contains(move)) {
+				if (myMap.getLoc(validMoves.get(move)) != null) {
+					if (!myMap.getLoc(validMoves.get(move)).contains(Map.Type.WALL)) {
+						set.add(move);
+						myLoc = validMoves.get(move);
+						myMap.move("pacman", myLoc, Map.Type.PACMAN);
+						return true;
+					}
+				}
+			} else {
+				i--;
 			}
 		}
-
+		
 		return false;
 	}
 
