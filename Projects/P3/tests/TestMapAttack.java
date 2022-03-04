@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestMapAttack{
 
 	@Test
-	public void testAttack1() {
+	public void testAttack1() extends TestCase{
 		
 		MainFrame frame = null;
 		
