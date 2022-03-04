@@ -42,7 +42,7 @@ public class PacMan{
 		Location check3 = new Location(xx+1, yy);
 
 		// x-1
-		Location check4 = new Location(xx+1, yy);
+		Location check4 = new Location(xx-1, yy);
 
 		if (myMap.getLoc(check1).contains(Map.Type.GHOST) 
 				&& (myMap.getLoc(check1) != null)) {
