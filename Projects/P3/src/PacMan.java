@@ -51,9 +51,11 @@ public class PacMan {
 
 	public boolean move() {
 
+		// get all valid locations for pacman where it could be moved to next
 		ArrayList<Location> validMoves = get_valid_moves();
 
 		for (Location loc : validMoves) {
+			// move pacman to loc, if loc is occupied by a Cookie or is empty
 			if (myMap.getLoc(loc) != null && (myMap.getLoc(loc).contains(Map.Type.COOKIE)
 					|| myMap.getLoc(loc).contains(Map.Type.EMPTY))) {
 				myLoc = loc;
