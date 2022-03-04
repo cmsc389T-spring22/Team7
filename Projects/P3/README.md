@@ -22,6 +22,12 @@ Using Pacman's get_valid_moves() method, this method moves pacman to the first l
 #### Test Description
 This test first adds a Pacman to Location (1, 0), and then moves Pacman with move() method. It then checks to make sure that the Pacman is not at Location (1, 0) anymore.
 
+### is_ghost_in_range()
+#### Method Description
+Inside the components of Pacman, we want to locate if there are any ghosts +1 coordinate point around him. If the ghost is 1+ coordinate point away, then the ghost can attack pacman and return the true. If the ghost is not +1 coordinate point away from him, then pacman cannot be attacked because the ghost is not close enough so we return false. There are also checks for Null data.
+#### Test Description
+The first test checks that the ghost should be close to Pacman, so it should return true. I put (9,11) for the ghost coordinate and (9,12) for the Pacman coordinate. The second test should return false, because for that I just changed the ghost coordinate to (9,8), so the ghost would not be close enough.
+
 ---
 
 ## Ghost Class
@@ -37,6 +43,12 @@ Using Ghost's get_valid_moves() method, this method moves the ghost to the first
 #### Test Description
 This test first adds a Ghost to Location (1, 0), and then uses the move() method to it. It then checks to make sure that the Ghost is not at Location (1, 0) anymore.
 
+### is_pacman_in_range()
+#### Method Description
+Inside the components of Ghost, we want to locate if Pacman is +1 coordinate point around the current ghost. If Pacman is 1+ coordinate point away, then the current ghost can attack that Pacman and return the true. If Pacman is not +1 coordinate point away from the ghost, then the ghost cannot be attacked because pacman is not close enough so we return false. There is also checks for Null data.
+#### Test Description 
+The first test checks that the Pacman should be close to ghost, so it should return true. I put (9,11) for the ghost coordinate and (9,12) for the Pacman coordinate. The second test should return false, because for that I just changed the ghost coordinate to (9,8), so the ghost would not be close enough.
+
 ---
 
 ## Map Class 
@@ -51,6 +63,12 @@ Testing two valid locations (1,2) (1,1) where Pacman can be placed, (0,0) which 
 Using the parameter loc, the method returns a HashSet of one of following types, (EMPTY, PACMAN, GHOST, WALL, COOKIE), depending on what is currently at that location.
 #### Test Description
 There are two tests for this method. They both first add a pacman to Location (1, 0). The first one checks to make sure that the type at Location (1, 0) matches the one returned by the getLoc method. The second one checks to make sure that the type returned by the getLoc method at Location (2, 0) does not contain a Pacman.
+
+### attack(String name)
+#### Method Description
+This method checks if a ghost was actually able to eat pacman. If it did happen you return true and change the gameOver boolean to true as well. If it did not happen, you return false.
+#### Test Description 
+This method is very similar to the is_ghost_in_range and is_pacman_in_range. I took the example that was given and changed the name of the ghost to Clyde. Clyde is in range of pacman with coordinates (9,11). I made the case where he does eat pacman and it returns true since Pacman is in (9,12). The other test will return false and the game resumes since Clyde is in coordinate (9,8) and Pacman is still in (9,12).
 
 ---
 
