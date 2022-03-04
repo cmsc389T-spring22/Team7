@@ -47,6 +47,8 @@ Testing two valid locations (1,2) (1,1) where Pacman can be placed, (0,0) which 
 ### getLoc(Location loc)
 #### Method Description
 Using the parameter loc, the method returns a HashSet of one of following types, (EMPTY, PACMAN, GHOST, WALL, COOKIE), depending on what is currently at that location.
+#### Test Description
+There are two tests for this method. They both first add a pacman to Location (1, 0). The first one checks to make sure that the type at Location (1, 0) matches the one returned by the getLoc method. The second one checks to make sure that the type returned by the getLoc method at Location (2, 0) does not contain a Pacman.
 
 ---
 
