@@ -100,10 +100,7 @@ public class PacMan {
 		// x-1
 		Location check4 = new Location(xx-1, yy);
 		
-		if(check1 == null || check2 == null || check3 == null || check4 == null){
-			return false; 
-		}
-		
+
 
 		if (myMap.getLoc(check1).contains(Map.Type.GHOST) 
 				&& (myMap.getLoc(check1) != null)) {
