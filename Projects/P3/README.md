@@ -36,3 +36,9 @@ Using the name, loc, and type this method will update Pacman or Ghost types loca
 Testing two valid locations (1,2) (1,1) where Pacman can be placed, (0,0) which is a wall returning false, and (23,15) which is out of bounds. 
 
 ---
+
+
+## Extra Info 
+### Map 
+Helps visualize how the tests are run based on coordinates. 
+<img src ="https://github.com/cmsc389T-spring22/Team7/blob/main/Projects/P3/map/map.png" width="600" height="600">
