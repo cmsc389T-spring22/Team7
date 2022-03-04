@@ -16,13 +16,13 @@ public class PacMan {
 
 	public ArrayList<Location> get_valid_moves() {
 
-		//get different location coordinates around pacman's curr location
-		Location up = myLoc.shift(-1,0);
-		Location down = myLoc.shift(1,0);
-		Location right = myLoc.shift(0,1);
-		Location left = myLoc.shift(0,-1);
+		// get different location coordinates around pacman's curr location
+		Location up = myLoc.shift(-1, 0);
+		Location down = myLoc.shift(1, 0);
+		Location right = myLoc.shift(0, 1);
+		Location left = myLoc.shift(0, -1);
 
-		//add locations to possible ArrayLIst we will iterate over
+		// add locations to possible ArrayLIst we will iterate over
 		ArrayList<Location> possible = new ArrayList<Location>();
 		possible.add(up);
 		possible.add(down);
@@ -30,14 +30,16 @@ public class PacMan {
 		possible.add(left);
 
 		ArrayList<Location> valid = new ArrayList<Location>();
-		//iterate over each possible location and use map function to check if pacman can move
-		//based on the premise that the location isnt null or that a wall is not found at a location
-		//other types are valid for movig (Ex. ghost, cherry etc)
-		for (Location dir : possible){
+		// iterate over each possible location and use map function to check if pacman
+		// can move
+		// based on the premise that the location isnt null or that a wall is not found
+		// at a location
+		// other types are valid for movig (Ex. ghost, cherry etc)
+		for (Location dir : possible) {
 
-			//System.out.println(dir);
+			// System.out.println(dir);
 
-			if(myMap.getLoc(dir) != null && myMap.getLoc(dir).contains(Map.Type.WALL)) {
+			if (myMap.getLoc(dir) != null && myMap.getLoc(dir).contains(Map.Type.WALL)) {
 				continue;
 			}
 
@@ -52,8 +54,8 @@ public class PacMan {
 		ArrayList<Location> validMoves = get_valid_moves();
 
 		for (Location loc : validMoves) {
-			if (myMap.getLoc(loc).contains(Map.Type.COOKIE)
-					|| myMap.getLoc(loc).contains(Map.Type.EMPTY)) {
+			if (myMap.getLoc(loc) != null && (myMap.getLoc(loc).contains(Map.Type.COOKIE)
+					|| myMap.getLoc(loc).contains(Map.Type.EMPTY))) {
 				myLoc = loc;
 				myMap.move("pacman", loc, Map.Type.PACMAN);
 				return true;
