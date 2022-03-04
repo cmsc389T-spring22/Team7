@@ -1,6 +1,6 @@
 # Project 3 - Pacman 
 
-<img src ="src/assets/FirstScreen.PNG" width="200" height="350">
+<img src ="src/assets/FirstScreen.PNG" width="250" height="350">
 
 ### Team 7 Members
 - Ivana Sanchez Diaz
