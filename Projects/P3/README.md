@@ -29,3 +29,10 @@ Placing Ghost at location (9,11) the valid locations should be (9,12) (10,11) an
 ---
 
 ## Map Class 
+### move(String name, Location loc, Type type)
+#### Description
+Using the name, loc, and type this method will update Pacman or Ghost types locations in the field, locations, and components.  This method also checks that the location parameter is within the map bounds.  Also checking that type is of type PACMAN or GHOST.  
+#### Test 
+Testing two valid locations (1,2) (1,1) where Pacman can be placed, (0,0) which is a wall returning false, and (23,15) which is out of bounds. 
+
+---
