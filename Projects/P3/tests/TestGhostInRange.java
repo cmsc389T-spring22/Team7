@@ -4,6 +4,7 @@ import java.io.*;
 
 public class TestGhostInRange extends TestCase {
 
+
 	public void testGhostInRange() throws FileNotFoundException{
 		return null;
 	}
