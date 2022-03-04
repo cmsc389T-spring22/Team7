@@ -2,11 +2,11 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 
-public class PacMan{
+public class PacMan {
 	String myName;
 	Location myLoc;
 	Map myMap;
-	Location shift; 
+	Location shift;
 
 	public PacMan(String name, Location loc, Map map) {
 		this.myLoc = loc;
@@ -15,6 +15,7 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
+
 		//get different location coordinates around pacman's curr location
 		Location up = myLoc.shift(-1,0);
 		Location down = myLoc.shift(1,0);
@@ -43,17 +44,30 @@ public class PacMan{
 			valid.add(dir);
 		}
 		return valid;
+
 	}
 
 	public boolean move() {
+
+		ArrayList<Location> validMoves = get_valid_moves();
+
+		for (Location loc : validMoves) {
+			if (myMap.getLoc(loc).contains(Map.Type.COOKIE)
+					|| myMap.getLoc(loc).contains(Map.Type.EMPTY)) {
+				myLoc = loc;
+				myMap.move("pacman", loc, Map.Type.PACMAN);
+				return true;
+			}
+		}
+
 		return false;
 	}
 
-	public boolean is_ghost_in_range() { 
+	public boolean is_ghost_in_range() {
 		return false;
 	}
 
-	public JComponent consume() { 
- 		return null;
+	public JComponent consume() {
+		return null;
 	}
 }
