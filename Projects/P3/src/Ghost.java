@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.ArrayList;
 
-public class Ghost{
+public class Ghost {
 	String myName;
 	Location myLoc;
 	Map myMap;
@@ -42,9 +42,22 @@ public class Ghost{
 	}
 
 	public boolean move() {
+
+		// Gather all valid moves for ghost
+		ArrayList<Location> validMoves = get_valid_moves();
+
+		for (Location loc : validMoves) {
+			// move ghost to a location that is not occupied by a wall
+			if (!myMap.getLoc(loc).contains(Map.Type.WALL)) {
+				myLoc = loc;
+				myMap.move("ghost", loc, Map.Type.GHOST);
+				return true;
+			}
+		}
+
 		return false;
 	}
-
+  
 	public boolean is_pacman_in_range() { 
 		
 			if (myLoc == null) {
