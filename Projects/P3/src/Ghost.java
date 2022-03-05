@@ -59,7 +59,7 @@ public class Ghost {
 					if (!myMap.getLoc(validMoves.get(move)).contains(Map.Type.WALL)) {
 						set.add(move);
 						myLoc = validMoves.get(move);
-						myMap.move("ghost", myLoc, Map.Type.GHOST);
+						myMap.move(myName, myLoc, Map.Type.GHOST);
 						return true;
 					}
 				}
