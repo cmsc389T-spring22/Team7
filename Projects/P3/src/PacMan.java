@@ -79,6 +79,7 @@ public class PacMan {
 	}
 
 	public boolean is_ghost_in_range() { 
+
 		
 		if (myLoc == null) {
 			return false;
@@ -117,6 +118,7 @@ public class PacMan {
 		} else {
 			return false;
 		}
+
 	}
 
 	public JComponent consume() { 
