@@ -3,6 +3,14 @@
 <img src ="src/assets/FirstScreen.PNG" width="250" height="350">
 <img src ="src/assets/pacman.gif" width="250" height="350">
 
+## Instructions 
+
+To compile and run the code use the following terminal commands: 
+
+```bash
+javac -cp "src/" src/*.java
+java -cp "src/" StartMenu
+```
 ### Team 7 Members
 - Ivana Sanchez Diaz
 - Asfandyar Khan
