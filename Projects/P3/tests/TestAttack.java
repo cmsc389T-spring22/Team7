@@ -9,6 +9,7 @@ public class TestAttack extends TestCase {
 
 	@Test
 	public void testAttack() throws FileNotFoundException{
+
 		MainFrame frame = null;
 		
 
@@ -21,5 +22,6 @@ public class TestAttack extends TestCase {
 		assertFalse(ghost.attack());
 
 	
+
 	}
 }
