@@ -61,14 +61,15 @@ public class Map {
 		if(loc.x < 0 || loc.x > dim || loc.y < 0 || loc.y > dim){
 			return false;
 		}
-		//check if wall is at given location
-		if(field.get(loc).contains(Map.Type.WALL)){
-			return false;
-		}
 		//check if null ? dont know if this is necessary
 		if(field.get(loc) == null){
 			return false;
 		}
+		//check if wall is at given location
+		if(field.get(loc).contains(Map.Type.WALL)){
+			return false;
+		}
+
 		//only pacman or ghost can move
 		if(type != Type.PACMAN && type != Type.GHOST){
 			return false;
