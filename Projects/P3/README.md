@@ -37,6 +37,12 @@ Inside the components of Pacman, we want to locate if there are any ghosts +1 co
 #### Test Description
 The first test checks that the ghost should be close to Pacman, so it should return true. I put (9,11) for the ghost coordinate and (9,12) for the Pacman coordinate. The second test should return false, because for that I just changed the ghost coordinate to (9,8), so the ghost would not be close enough.
 
+### consume()
+#### Method Description
+the function check to see if location, map and actual locationa are valid inputs, and then if they're it checks to see if the location on the map contains a cookie, if it does then it eatcookie method attached to map class, to have pacman eat cookie. 
+#### Test Description
+We add a cookie and pacman to the frame and check whether pacman successfully eats cookie by checking if getLoc() method returns a cookie enum. In this particular case it shouldn't 
+
 ---
 
 ## Ghost Class
@@ -58,6 +64,12 @@ Inside the components of Ghost, we want to locate if Pacman is +1 coordinate poi
 #### Test Description 
 The first test checks that the Pacman should be close to ghost, so it should return true. I put (9,11) for the ghost coordinate and (9,12) for the Pacman coordinate. The second test should return false, because for that I just changed the ghost coordinate to (9,8), so the ghost would not be close enough.
 
+### attack()
+#### Method Description
+this method uses a condition statement to see if pacman is in range by calling is_pacman_in_range function and whther it return true or not will call attack function that map has provided
+#### Test Description 
+test adds pacman on tile 9,11 and adds ghost on 9,12 and checks whether attack is successful or not.
+
 ---
 
 ## Map Class 
@@ -78,6 +90,13 @@ There are two tests for this method. They both first add a pacman to Location (1
 This method checks if a ghost was actually able to eat pacman. If it did happen you return true and change the gameOver boolean to true as well. If it did not happen, you return false.
 #### Test Description 
 This method is very similar to the is_ghost_in_range and is_pacman_in_range. I took the example that was given and changed the name of the ghost to Clyde. Clyde is in range of pacman with coordinates (9,11). I made the case where he does eat pacman and it returns true since Pacman is in (9,12). The other test will return false and the game resumes since Clyde is in coordinate (9,8) and Pacman is still in (9,12).
+
+### eatCookie(String name)
+#### Method Description
+this method takes the location of pacman then gets the location of cookie, if they're in the same tile. The cookie is removed from the map and we increase the cookie count by 1. Then return the cookie component that pacman ate
+
+#### Test Description 
+we make a cookie and pacman and add it to frame, and then we call eatcookie function to see if it is successfully removed. We then check the location to see if the cookie is still there and assertTrue() that it's not there.
 
 ---
 
