@@ -4,10 +4,10 @@ import java.io.*;
 import org.junit.Assert.*;
 import org.junit.Test;
 
-public class TestMapAttack{
+public class TestMapAttack extends TestCase{
 
 	@Test
-	public void testAttack1() extends TestCase{
+	public void testAttack1()throws FileNotFoundException{
 		
 		MainFrame frame = null;
 		
@@ -23,7 +23,7 @@ public class TestMapAttack{
 	}
 	
 	@Test
-	public void testAttack2() {
+	public void testAttack2()throws FileNotFoundException {
 		
 		MainFrame frame = null;
 		
