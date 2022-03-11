@@ -43,7 +43,6 @@ jobs:
             javac -version 
             javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
             java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
-            java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
       
   test-GHget_valid_moves:
         runs-on: ubuntu-latest
