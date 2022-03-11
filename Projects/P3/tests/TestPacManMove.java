@@ -25,7 +25,7 @@ public class TestPacManMove extends TestCase {
 
 		Map map = frame.getMap();
 		map.getLoc(new Location(1, 0));
-		//assertFalse(new Location(1,0) == pacman.myLoc);
-		assertNotEquals(new Location(1, 0), pacman.myLoc); // should pass because pacman's location has changed
+		assertFalse(new Location(1,0) == pacman.myLoc);
+		//assertNotEquals(new Location(1, 0), pacman.myLoc); // should pass because pacman's location has changed
 	}
 }
