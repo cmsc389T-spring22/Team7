@@ -22,7 +22,6 @@ public class TestGhostMove extends TestCase {
 		// Creates a red ghost named "name" at location x,y
 		Ghost ghost = frame.addGhost(new Location(0, 1), "clyde", Color.orange);
 		ghost.move();
-
 		assertNotEquals(new Location(1, 0), ghost.myLoc); // ghost's location has changed so this will pass 
 	}
 }

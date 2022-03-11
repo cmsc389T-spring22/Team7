@@ -1,8 +1,6 @@
 import junit.framework.*;
-
 import java.awt.Color;
 import java.io.*;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 
@@ -27,7 +25,7 @@ public class TestPacManMove extends TestCase {
 
 		Map map = frame.getMap();
 		map.getLoc(new Location(1, 0));
-
+		//assertFalse(new Location(1,0) == pacman.myLoc);
 		assertNotEquals(new Location(1, 0), pacman.myLoc); // should pass because pacman's location has changed
 	}
 }
