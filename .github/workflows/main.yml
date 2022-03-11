@@ -21,9 +21,57 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a single command using the runners shell
-      - name: Run a multi-line script
+      - name: compile all java files
         run: |
           cd Projects/P3
           java -version
           javac -version 
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          
+  test-PMget_valid_moves:
+        runs-on: ubuntu-latest
+        container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+        - name: TestPacMan get_valid_moves
+          run: |
+            cd Projects/P3
+            java -version
+            javac -version 
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+      
+  test-GHget_valid_moves:
+        runs-on: ubuntu-latest
+        container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+        - name: Test Ghost get_valid_moves
+          run: |
+            cd Projects/P3
+            java -version
+            javac -version 
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+
+  test-Map-move:
+        runs-on: ubuntu-latest
+        container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+        - name: Test map move
+          run: |
+            cd Projects/P3
+            java -version
+            javac -version 
+            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+            java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
