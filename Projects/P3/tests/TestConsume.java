@@ -19,7 +19,7 @@ public class TestConsume extends TestCase {
 			//frame.initPlayers();
 
 		Map map = frame.getMap();
-		assertEquals(pacman.consume() == cookie);
+		assertEquals(pacman.consume(), cookie);
 	
 	}
 }
