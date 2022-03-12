@@ -1,7 +1,5 @@
 import junit.framework.*;
-import java.awt.Color;
 import java.io.*;
-import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestPacManMove extends TestCase {
@@ -10,22 +8,21 @@ public class TestPacManMove extends TestCase {
 	public void testPacManMoveI() throws FileNotFoundException {
 
 		// Creating A Map
-		MainFrame frame = null;
+		NoFrame frame = null;
 
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
-		PacMan pacman = frame.addPacMan(new Location(1, 0)); // Creates PacMan at location 1, 0
-		// Ghost ghost = frame.addGhost(new Location(1, 0), "name", Color.red);
+		// Create a PacMan at location 1, 0
+		PacMan pacman = frame.addPacMan(new Location(1, 0));
 		
 		pacman.move();
 
 		Map map = frame.getMap();
 		map.getLoc(new Location(1, 0));
-		assertFalse(new Location(1,0) == pacman.myLoc);
-		//assertNotEquals(new Location(1, 0), pacman.myLoc); // should pass because pacman's location has changed
+		assertFalse(new Location(1, 0) == pacman.myLoc);
 	}
 }

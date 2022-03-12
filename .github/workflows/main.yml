@@ -3,15 +3,15 @@
 name: CI
 
 # Controls when the workflow will run
-on: [push,pull_request,workflow_dispatch]
+on:
+  [push, pull_request, workflow_dispatch]
   # Triggers the workflow on push or pull request events but only for the main branch
   # Allows you to run this workflow manually from the Actions tab
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-
-# This workflow contains a single job called "build"
-### COMPILING JAVA FILES #######
+  # This workflow contains a single job called "build"
+  ### COMPILING JAVA FILES #######
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -27,51 +27,99 @@ jobs:
           java -version
           javac -version 
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          
-  test-PMget_valid_moves:
-        runs-on: ubuntu-latest
-        container: openjdk
+
+  test-PM-get_valid_moves:
+    runs-on: ubuntu-latest
+    container: openjdk
     # Steps represent a sequence of tasks that will be executed as part of the job
-        steps:
+    steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       # Runs a single command using the runners shell
-        - name: TestPacMan get_valid_moves
-          run: |
-            cd Projects/P3
-            java -version
-            javac -version 
-            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
-      
-  test-GHget_valid_moves:
-        runs-on: ubuntu-latest
-        container: openjdk
+      - name: TestPacMan get_valid_moves
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+
+  test-GH-get_valid_moves:
+    runs-on: ubuntu-latest
+    container: openjdk
     # Steps represent a sequence of tasks that will be executed as part of the job
-        steps:
+    steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       # Runs a single command using the runners shell
-        - name: Test Ghost get_valid_moves
-          run: |
-            cd Projects/P3
-            java -version
-            javac -version 
-            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+      - name: TestGhost get_valid_moves
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
 
   test-Map-move:
-        runs-on: ubuntu-latest
-        container: openjdk
+    runs-on: ubuntu-latest
+    container: openjdk
     # Steps represent a sequence of tasks that will be executed as part of the job
-        steps:
+    steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       # Runs a single command using the runners shell
-        - name: Test map move
-          run: |
-            cd Projects/P3
-            java -version
-            javac -version 
-            javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-            java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+      - name: TestMap move
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+
+  test-PM-move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+      - name: TestPacMan move
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+
+  test-GH-move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+      - name: TestGhost move
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+
+  test-Map-getLoc:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+      - name: TestMap getLoc
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
