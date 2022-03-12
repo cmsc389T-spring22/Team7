@@ -7,11 +7,11 @@ import static org.junit.Assert.assertEquals;
 public class TestMapMove {
 	@Test
 	public void testMapMove(){
-		MainFrame frame = null;
+		NoFrame frame = null;
 
 		//NoFrame frame = null ;
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 			PacMan pacman = frame.addPacMan(new Location(1, 2));
 			//frame.initPlayers();
 		} catch (FileNotFoundException e){

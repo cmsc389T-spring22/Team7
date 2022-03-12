@@ -10,10 +10,10 @@ public class TestPacManInRange extends TestCase {
 	@Test
 	public void testPacManInRange1() {
 		
-		MainFrame frame = null;
+		NoFrame frame = null;
 		
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -26,10 +26,10 @@ public class TestPacManInRange extends TestCase {
 	@Test
 	public void testPacManInRange2() {
 		
-		MainFrame frame = null;
+		NoFrame frame = null;
 		
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}

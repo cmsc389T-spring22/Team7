@@ -10,10 +10,10 @@ public class TestAttack extends TestCase {
 	@Test
 	public void testAttack() throws FileNotFoundException{
 
-		MainFrame frame = null;
+		NoFrame frame = null;
 		
 
-		frame = new MainFrame();
+		frame = new NoFrame();
 		PacMan pacman = frame.addPacMan(new Location(9, 11));
 		Ghost ghost = frame.addGhost(new Location(9, 12), "Robert", Color.red);
 		assertTrue(ghost.attack());

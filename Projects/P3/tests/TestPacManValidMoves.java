@@ -9,13 +9,13 @@ public class TestPacManValidMoves extends TestCase {
 
 	public void testPacManValidMoves() throws FileNotFoundException{
 
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 
 		PacMan pacman = frame.addPacMan(new Location(9,11));
 		frame.startGame();
 
 		ArrayList<Location> moves = pacman.get_valid_moves();
-		System.out.println(moves);
+		//System.out.println(moves);
 
 		//ERROR IN README these are the only locations one can access//
 		assertTrue(moves.contains(new Location(9,12)));

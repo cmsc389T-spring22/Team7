@@ -37,7 +37,7 @@ public class TestMapEatCookie {
 	@Test
 	public void testMapEatCookie() throws FileNotFoundException{
 
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		Location location = new Location(4, 6);
 		PacMan pacman = frame.addPacMan(location);
 	
