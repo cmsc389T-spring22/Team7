@@ -85,7 +85,7 @@ public class Map {
 		field.get(loc).add(type);
 		locations.put(name,loc);
 
-		return true;
+		return false;
 
 	}
 

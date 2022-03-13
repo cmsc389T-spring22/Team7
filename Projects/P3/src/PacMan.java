@@ -18,10 +18,10 @@ public class PacMan {
 	public ArrayList<Location> get_valid_moves() {
 
 		// get different location coordinates around pacman's curr location
-		Location up = myLoc.shift(-1, 0);
-		Location down = myLoc.shift(1, 0);
-		Location right = myLoc.shift(0, 1);
-		Location left = myLoc.shift(0, -1);
+		Location up = myLoc.shift(-2, 0);
+		Location down = myLoc.shift(2, 0);
+		Location right = myLoc.shift(0, 2);
+		Location left = myLoc.shift(0, -2);
 
 		// add locations to possible ArrayLIst we will iterate over
 		ArrayList<Location> possible = new ArrayList<Location>();
