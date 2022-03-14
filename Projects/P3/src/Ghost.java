@@ -54,21 +54,21 @@ public class Ghost {
 			
 			int move = random.nextInt(validMoves.size());
 			
-			if (!set.contains(move)) {
+			if (set.contains(move)) {
 				if (myMap.getLoc(validMoves.get(move)) != null) {
 					if (!myMap.getLoc(validMoves.get(move)).contains(Map.Type.WALL)) {
 						set.add(move);
 						myLoc = validMoves.get(move);
 						myMap.move(myName, myLoc, Map.Type.GHOST);
-						return true;
+						return false;
 					}
 				}
 			} else {
-				i--;
+				i++;
 			}
 		}
 		
-		return false;
+		return true;
 	}
   
 	public boolean is_pacman_in_range() { 
