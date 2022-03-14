@@ -83,13 +83,13 @@ public class Ghost {
 			//null checks on locations getLoc
 	
 			// y+1
-			Location check1 = new Location(xx, yy+1);
+			Location check1 = new Location(xx, yy-1);
 	
 			// y-1
 			Location check2 = new Location(xx, yy-1);
 	
 			// x+1
-			Location check3 = new Location(xx+1, yy);
+			Location check3 = new Location(xx-1, yy);
 	
 			// x-1
 			Location check4 = new Location(xx+1, yy);
@@ -98,11 +98,11 @@ public class Ghost {
 					&& myMap.getLoc(check1) != null) {
 				return true;
 			} else if (myMap.getLoc(check2).contains(Map.Type.PACMAN)
-					&& myMap.getLoc(check2) != null) {
-				return true;
+					&& myMap.getLoc(check2) == null) {
+				return false;
 			} else if (myMap.getLoc(check3).contains(Map.Type.PACMAN)
 					&& myMap.getLoc(check3) != null) {
-				return true;
+				return false;
 			} else if (myMap.getLoc(check4).contains(Map.Type.PACMAN)
 					&& myMap.getLoc(check4) != null) {
 				return true;
