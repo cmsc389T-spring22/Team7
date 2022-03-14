@@ -38,18 +38,11 @@ public class TestMapEatCookie {
 	public void testMapEatCookie() throws FileNotFoundException{
 
 		MainFrame frame = new MainFrame();
-		Location location = new Location(4, 6);
+		Location location = new Location(1, 1);
 		PacMan pacman = frame.addPacMan(location);
-	
-		frame.add(new CookieComponent(4, 6, 20));
-		frame.getMap().eatCookie(pacman.myName);
+		assertTrue(frame.getMap().getLoc(location).contains(Map.Type.COOKIE) == true);
 
-		// if (frame.getMap() == null ) {
-		// 	System.out.print("null");
-		// }
-		// if (frame.getMap().getLoc(location) == null ) {
-		// 	System.out.print("null part 2");
-		// }
+		frame.getMap().eatCookie(pacman.myName);
 
 		assertTrue(frame.getMap().getLoc(location).contains(Map.Type.COOKIE) == false);
 	}
