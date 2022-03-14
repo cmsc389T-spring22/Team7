@@ -37,7 +37,7 @@ public class TestMapEatCookie {
 	@Test
 	public void testMapEatCookie() throws FileNotFoundException{
 
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		Location location = new Location(1, 1);
 		PacMan pacman = frame.addPacMan(location);
 		assertTrue(frame.getMap().getLoc(location).contains(Map.Type.COOKIE) == true);
