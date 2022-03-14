@@ -3,16 +3,17 @@ import java.awt.Color;
 import java.io.*;
 import org.junit.Assert.*;
 import org.junit.Test;
+
 public class TestGhostInRange extends TestCase {
 
 
 	@Test
 	public void testGhostInRange1()throws FileNotFoundException {
 		
-		MainFrame frame = null;
+		NoFrame frame = null;
 		
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -26,10 +27,10 @@ public class TestGhostInRange extends TestCase {
 	@Test
 	public void testGhostInRange2()throws FileNotFoundException {
 		
-		MainFrame frame = null;
+		NoFrame frame = null;
 		
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
