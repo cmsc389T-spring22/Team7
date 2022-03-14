@@ -138,7 +138,7 @@ jobs:
           java -version
           javac -version 
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore is_ghost_in_range
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
 
   test-GH-is_pacman_in_range:
     runs-on: ubuntu-latest
@@ -154,7 +154,7 @@ jobs:
           java -version
           javac -version 
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore is_pacman_in_range
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
 
   test-Map-attack:
     runs-on: ubuntu-latest
@@ -170,4 +170,4 @@ jobs:
           java -version
           javac -version 
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore attack
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
