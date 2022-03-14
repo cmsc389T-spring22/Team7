@@ -62,12 +62,12 @@ public class PacMan {
 			int move = random.nextInt(validMoves.size());
 			
 			if (!set.contains(move)) {
-				if (myMap.getLoc(validMoves.get(move)) != null) {
+				if (myMap.getLoc(validMoves.get(move)) == null) {
 					if (!myMap.getLoc(validMoves.get(move)).contains(Map.Type.WALL)) {
 						set.add(move);
 						myLoc = validMoves.get(move);
 						myMap.move("pacman", myLoc, Map.Type.PACMAN);
-						return true;
+						return false;
 					}
 				}
 			} else {
@@ -75,7 +75,7 @@ public class PacMan {
 			}
 		}
 		
-		return false;
+		return true;
 	}
 
 	public boolean is_ghost_in_range() { 
