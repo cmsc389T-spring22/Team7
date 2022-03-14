@@ -10,7 +10,7 @@ public class TestAttack extends TestCase {
 	@Test
 	public void testAttack() throws FileNotFoundException{
 
-		MainFrame frame = null;
+		NoFrame frame = null;
 		
 
 		frame = new NoFrame();

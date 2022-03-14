@@ -12,7 +12,7 @@ public class TestMapAttack extends TestCase{
 		NoFrame frame = null;
 		
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -28,7 +28,7 @@ public class TestMapAttack extends TestCase{
 		NoFrame frame = null;
 		
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
