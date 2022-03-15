@@ -7,19 +7,13 @@ public class TestConsume extends TestCase {
 
 	public void testConsume() throws FileNotFoundException {
 
-		MainFrame frame = null;
+		NoFrame frame = null;
 
-			frame = new MainFrame();
-			Location location = new Location(9, 12);
+			frame = new NoFrame();
+			Location location = new Location(1, 1);
 			PacMan pacman = frame.addPacMan(location);
-			CookieComponent cookie = new CookieComponent(9, 12, 20);
-			frame.add(cookie);
-			
-			pacman.consume();
-			//frame.initPlayers();
 
-		Map map = frame.getMap();
-		assertEquals(pacman.consume(), cookie);
+		assertTrue(pacman.consume() != null);
 	
 	}
 }

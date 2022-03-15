@@ -171,3 +171,51 @@ jobs:
           javac -version 
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+
+  test-PM-consume:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+      - name: TestPacMan consume
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+
+  test-Map-eatCookie:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+      - name: TestMap eatCookie
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+
+  test-GH-attack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a single command using the runners shell
+      - name: TestGhost attack
+        run: |
+          cd Projects/P3
+          java -version
+          javac -version 
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
