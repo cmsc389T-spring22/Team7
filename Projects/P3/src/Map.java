@@ -156,7 +156,7 @@ public class Map {
 				this.field.remove(temp);
 				locations.remove("tok_x"+temp.x+"_y"+temp.y);
 				this.cookies += 1;
-				return components.remove("tok_x"+temp.x+"_y"+temp.y);
+				return null;
 			}
 			return null;
 		}
