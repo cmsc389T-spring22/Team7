@@ -9,10 +9,10 @@ public class TestMapAttack extends TestCase{
 	@Test
 	public void testAttack1()throws FileNotFoundException{
 		
-		MainFrame frame = null;
+		NoFrame frame = null;
 		
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -25,10 +25,10 @@ public class TestMapAttack extends TestCase{
 	@Test
 	public void testAttack2()throws FileNotFoundException {
 		
-		MainFrame frame = null;
+		NoFrame frame = null;
 		
 		try {
-			frame = new MainFrame();
+			frame = new NoFrame();
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
