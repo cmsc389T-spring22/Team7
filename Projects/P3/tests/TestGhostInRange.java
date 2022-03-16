@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.io.*;
 import org.junit.Assert.*;
 import org.junit.Test;
+
 public class TestGhostInRange extends TestCase {
 
 
@@ -38,5 +39,6 @@ public class TestGhostInRange extends TestCase {
 		PacMan pacman = frame.addPacMan(new Location(9, 12));
 		assertEquals(false, pacman.is_ghost_in_range());
 	}
+
 
 }

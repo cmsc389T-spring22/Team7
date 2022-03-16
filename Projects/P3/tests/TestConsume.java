@@ -5,7 +5,6 @@ import java.io.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.*;
 
-
 public class TestConsume extends TestCase {
 
 	public void testConsume() throws FileNotFoundException {
@@ -13,9 +12,11 @@ public class TestConsume extends TestCase {
 		MainFrame frame = null;
 		
 
-			frame = new MainFrame();
-			Location location = new Location(9, 12);
+
+			frame = new NoFrame();
+			Location location = new Location(1, 1);
 			PacMan pacman = frame.addPacMan(location);
+
 			CookieComponent cookie = new CookieComponent(9, 12, 20);
 			frame.add(cookie);
 			
@@ -24,6 +25,7 @@ public class TestConsume extends TestCase {
 
 		Map map = frame.getMap();
 		assertEquals(pacman.consume(), cookie);
+
 	
 	}
 }

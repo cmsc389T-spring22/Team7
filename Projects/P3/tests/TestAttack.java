@@ -14,12 +14,11 @@ public class TestAttack extends TestCase {
 		
 
 		frame = new NoFrame();
+
 		PacMan pacman = frame.addPacMan(new Location(9, 11));
 		Ghost ghost = frame.addGhost(new Location(9, 12), "Robert", Color.red);
-		assertTrue(ghost.attack());
 
-		pacman = frame.addPacMan(new Location(9, 10));
-		assertFalse(ghost.attack());
+		assertTrue(ghost.attack());
 
 	
 
