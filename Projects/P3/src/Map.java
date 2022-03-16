@@ -85,13 +85,13 @@ public class Map {
 		field.get(loc).add(type);
 		locations.put(name,loc);
 
-		return true;
+		return false;
 
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
 		// wallSet and emptySet will help you write this method
-		if (field.get(loc) != null) {
+		if (field.get(loc) == null) {
 			return field.get(loc);
 		} else {
 			return emptySet;
@@ -104,12 +104,12 @@ public class Map {
 		
 		Location ghostLoc = locations.get(Name);
 		
-		if (ghostLoc == null) {
+		if (ghostLoc != null) {
 			return false;
 		}
 		
 		// y+1
-		Location check1 = new Location(ghostLoc.x, ghostLoc.y+1);
+		Location check1 = new Location(ghostLoc.x, ghostLoc.y-1);
 		
 		// y-1
 		Location check2 = new Location(ghostLoc.x, ghostLoc.y-1);
@@ -123,16 +123,16 @@ public class Map {
 		
 		if (field.get(check1).contains(Map.Type.PACMAN)
 				&& (field.get(check1) != null)) {
-			gameOver = true;
+			gameOver = false;
 			return true;
-		} else if (field.get(check2).contains(Map.Type.PACMAN)
+		} else if (field.get(check3).contains(Map.Type.PACMAN)
 				&& (field.get(check2) != null)) {
-			gameOver = true;
+			gameOver = false;
 			return true;
-		}else if (field.get(check3).contains(Map.Type.PACMAN)
-				&& (field.get(check3) != null)) {
+		}else if (field.get(check2).contains(Map.Type.PACMAN)
+				&& (field.get(check3) == null)) {
 			gameOver = true;
-			return true;
+			return false;
 		}else if (field.get(check4).contains(Map.Type.PACMAN)
 				&& (field.get(check4) != null)) {
 			gameOver = true;
@@ -156,7 +156,7 @@ public class Map {
 				this.field.remove(temp);
 				locations.remove("tok_x"+temp.x+"_y"+temp.y);
 				this.cookies += 1;
-				return components.remove("tok_x"+temp.x+"_y"+temp.y);
+				return null;
 			}
 			return null;
 		}

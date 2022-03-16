@@ -24,4 +24,3 @@ public class TestGhostValidMoves extends TestCase {
 	}
 
 }
-

@@ -40,5 +40,5 @@ public class TestGhostInRange extends TestCase {
 		assertEquals(false, pacman.is_ghost_in_range());
 	}
 
-}
 
+}

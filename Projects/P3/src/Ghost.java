@@ -16,10 +16,10 @@ public class Ghost {
 	public ArrayList<Location> get_valid_moves() {
 		//code duplicate from PacMan.java
 		//get different location coordinates around ghost's curr location
-		Location up = myLoc.shift(-1,0);
-		Location down = myLoc.shift(1,0);
-		Location right = myLoc.shift(0,1);
-		Location left = myLoc.shift(0,-1);
+		Location up = myLoc.shift(-2,0);
+		Location down = myLoc.shift(2,0);
+		Location right = myLoc.shift(0,2);
+		Location left = myLoc.shift(0,-2);
 		//add locations to possible ArrayLIst we will iterate over
 		ArrayList<Location> possible = new ArrayList<Location>();
 		possible.add(up);
@@ -54,21 +54,21 @@ public class Ghost {
 			
 			int move = random.nextInt(validMoves.size());
 			
-			if (!set.contains(move)) {
+			if (set.contains(move)) {
 				if (myMap.getLoc(validMoves.get(move)) != null) {
 					if (!myMap.getLoc(validMoves.get(move)).contains(Map.Type.WALL)) {
 						set.add(move);
 						myLoc = validMoves.get(move);
 						myMap.move(myName, myLoc, Map.Type.GHOST);
-						return true;
+						return false;
 					}
 				}
 			} else {
-				i--;
+				i++;
 			}
 		}
 		
-		return false;
+		return true;
 	}
   
 	public boolean is_pacman_in_range() { 
@@ -83,13 +83,13 @@ public class Ghost {
 			//null checks on locations getLoc
 	
 			// y+1
-			Location check1 = new Location(xx, yy+1);
+			Location check1 = new Location(xx, yy-1);
 	
 			// y-1
 			Location check2 = new Location(xx, yy-1);
 	
 			// x+1
-			Location check3 = new Location(xx+1, yy);
+			Location check3 = new Location(xx-1, yy);
 	
 			// x-1
 			Location check4 = new Location(xx+1, yy);
@@ -98,11 +98,11 @@ public class Ghost {
 					&& myMap.getLoc(check1) != null) {
 				return true;
 			} else if (myMap.getLoc(check2).contains(Map.Type.PACMAN)
-					&& myMap.getLoc(check2) != null) {
-				return true;
+					&& myMap.getLoc(check2) == null) {
+				return false;
 			} else if (myMap.getLoc(check3).contains(Map.Type.PACMAN)
 					&& myMap.getLoc(check3) != null) {
-				return true;
+				return false;
 			} else if (myMap.getLoc(check4).contains(Map.Type.PACMAN)
 					&& myMap.getLoc(check4) != null) {
 				return true;
@@ -112,11 +112,10 @@ public class Ghost {
 	}
 
 	public boolean attack() {
-		if(myMap != null){
-			if(is_pacman_in_range()){
-				return myMap.attack(this.myName);
-			}
-			return false;
+
+		if(!is_pacman_in_range()){
+			return myMap.attack(this.myName);
+
 		}
 		return false;	
 	}
